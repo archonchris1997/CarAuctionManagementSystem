@@ -1,0 +1,6 @@
+@CarAuctionManagementSystem_HostAddress = http://localhost:5044
+
+GET {{CarAuctionManagementSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
