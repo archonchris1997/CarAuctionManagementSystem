@@ -18,7 +18,6 @@
       <Folder Include="Repository\" />
       <Folder Include="Services\" />
       <Folder Include="Tests\" />
-      <Folder Include="Utils\" />
     </ItemGroup>
 
 </Project>
