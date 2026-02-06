@@ -7,3 +7,8 @@ public class OperationResult
     public List<string> Errors { get; set; } = new();
     public ErrorType ErrorType { get; set; } =  ErrorType.None;
 }
+
+public class OperationResult<T>: OperationResult
+{
+    public T? Data { get; set; }
+}
