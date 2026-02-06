@@ -13,7 +13,6 @@
     <ItemGroup>
       <Folder Include="Controllers\" />
       <Folder Include="Inventory\" />
-      <Folder Include="Repository\" />
       <Folder Include="Services\" />
       <Folder Include="Tests\" />
     </ItemGroup>
