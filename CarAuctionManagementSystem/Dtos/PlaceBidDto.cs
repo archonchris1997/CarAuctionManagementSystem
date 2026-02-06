@@ -1,6 +1,6 @@
 namespace CarAuctionManagementSystem.Dtos;
 
-public class PlaceBid
+public class PlaceBidDto
 {
     
 }
