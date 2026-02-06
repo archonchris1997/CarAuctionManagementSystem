@@ -14,7 +14,6 @@
       <Folder Include="Controllers\" />
       <Folder Include="Dtos\" />
       <Folder Include="Inventory\" />
-      <Folder Include="Models\" />
       <Folder Include="Repository\" />
       <Folder Include="Services\" />
       <Folder Include="Tests\" />
