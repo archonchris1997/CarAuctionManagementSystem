@@ -15,5 +15,14 @@ public class Vehicle
     public int? NumberOfSeats { get; set; }   // Suv
     public int? LoadCapacity { get; set; }    // Truck
     
+    protected Vehicle(int id, VehicleType type, string manufacturer, string model, int year, double startingBid)
+    {
+        Id = id;
+        Type = type;
+        Manufacturer = manufacturer;
+        Model = model;
+        Year = year;
+        StartingBid = startingBid;
+    }
     
 }
