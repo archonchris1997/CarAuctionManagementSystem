@@ -12,12 +12,10 @@ public class AuctionRepository:IAuctionRepository
         return _auctions.Values;
     }
 
-    public Auction? GetByVehicleId(int id)
+    public Auction? GetByVehicleId(int vehicleId)
     {
-        if (_auctions.TryGetValue(id, out var vehicle))
-        {
-            return vehicle;
-        }
+        if (_auctions.ContainsKey(vehicleId))
+            return _auctions[vehicleId];
 
         return null;
     }
@@ -35,11 +33,11 @@ public class AuctionRepository:IAuctionRepository
 
     public void Insert(Auction auction)
     {
-        throw new NotImplementedException();
+        _auctions.Add(auction.Vehicle.Id, auction);
     }
 
     public void Update(Auction auction)
     {
-        throw new NotImplementedException();
+        _auctions[auction.Vehicle.Id] = auction;
     }
 }

@@ -9,10 +9,8 @@ public class VehicleRepository : IVehicleRepository
     
     public Vehicle? GetById(int id)
     {
-        if (_vehicles.TryGetValue(id, out var vehicleFound))
-        {
-            return vehicleFound;
-        }
+        if (_vehicles.ContainsKey(id))
+            return _vehicles[id];
 
         return null;
     }
