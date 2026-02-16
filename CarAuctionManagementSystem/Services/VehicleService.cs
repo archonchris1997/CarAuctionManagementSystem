@@ -131,7 +131,21 @@ public class VehicleService : IVehicleService
 
     public OperationResult<List<VehicleDto>> GetByYear(int year)
     {
-        throw new NotImplementedException();
+        
+        var vehicles=_repository.GetByYear(year);
+        var dtos = new List<VehicleDto>();
+        foreach (var vehicle in vehicles)
+        {
+            var dto = VehicleMapper.ToDto(vehicle);
+            dtos.Add(dto);
+        }
+
+        return new OperationResult<List<VehicleDto>>()
+        {
+            Success = true,
+            Message = "Ok",
+            Data = dtos
+        };
     }
 
     private Vehicle CreateVehicle(CreateVehicleRequest request)
