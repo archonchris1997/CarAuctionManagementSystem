@@ -166,7 +166,7 @@ public class VehicleService : IVehicleService
             case VehicleType.Sedan:
                 return new Sedan(
                     request.Id,
-                    VehicleType.Sedan,          // 👈 ESTE é o que falta
+                    VehicleType.Sedan, // 👈 ESTE é o que falta
                     request.Manufacturer,
                     request.Model,
                     request.Year,
@@ -178,7 +178,7 @@ public class VehicleService : IVehicleService
             case VehicleType.Suv:
                 return new SUV(
                     request.Id,
-                    VehicleType.Suv,  // 👈 está a faltar isto
+                    VehicleType.Suv, // 👈 está a faltar isto
                     request.Manufacturer,
                     request.Model,
                     request.Year,
@@ -190,7 +190,7 @@ public class VehicleService : IVehicleService
             case VehicleType.Truck:
                 return new Truck(
                     request.Id,
-                    VehicleType.Truck,       // 👈 ESTE estava a faltar
+                    VehicleType.Truck, // 👈 ESTE estava a faltar
                     request.Manufacturer,
                     request.Model,
                     request.Year,
@@ -201,7 +201,7 @@ public class VehicleService : IVehicleService
 
             default:
                 throw new ArgumentException("Unsupported vehicle type");
-    }
+        }
 
-   
+    }
 }
