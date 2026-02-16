@@ -69,6 +69,8 @@ public class VehicleService : IVehicleService
     {
         var vehicles = _repository.GetAll();
         
+        
+        //Mandar para o Controller em DTO's
         var dtos = new List<VehicleDto>();
         
         foreach (var vehicle in vehicles)
@@ -87,12 +89,44 @@ public class VehicleService : IVehicleService
 
     public OperationResult<List<VehicleDto>> GetByManufacturer(string manufacturer)
     {
-        throw new NotImplementedException();
+        var vehicles=_repository.GetByManufacturer(manufacturer);
+        
+        //Agora preciso de converter os veiculos para Dtos
+        var dtos = new List<VehicleDto>();
+        foreach (var vehicle in vehicles)
+        {
+            var dto = VehicleMapper.ToDto(vehicle);
+            dtos.Add(dto);
+        }
+
+        return new OperationResult<List<VehicleDto>>
+        {
+            Success = true,
+            Message = "Ok",
+            Data = dtos
+        };
+        
     }
 
     public OperationResult<List<VehicleDto>> GetByModel(string model)
     {
-        throw new NotImplementedException();
+        var vehicles=_repository.GetByModel(model);
+        
+        //Converter para dtos 
+        var dtos = new List<VehicleDto>();
+        
+        foreach (var vehicle in vehicles)
+        {
+            var dto = VehicleMapper.ToDto(vehicle);
+            dtos.Add(dto);
+        }
+
+        return new OperationResult<List<VehicleDto>>()
+        {
+            Success = true,
+            Message = "Ok",
+            Data = dtos
+        };
     }
 
     public OperationResult<List<VehicleDto>> GetByYear(int year)
