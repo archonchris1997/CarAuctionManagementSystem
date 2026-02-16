@@ -1,14 +1,12 @@
 namespace CarAuctionManagementSystem.Models;
 
-public class SUV:Vehicle
+public class SUV : Vehicle
 {
-    protected SUV(int id, VehicleType type, string manufacturer, string model, int year, double startingBid, int numberOfSeats) : base(id, type, manufacturer, model, year, startingBid)
+    public int NumberOfSeats { get; set; }
+
+    public SUV(int id, VehicleType type, string manufacturer, string model, int year, double startingBid, int numberOfSeats)
+        : base(id, type, manufacturer, model, year, startingBid)
     {
         NumberOfSeats = numberOfSeats;
     }
-
-    public int NumberOfSeats { get; set; }
-    
-    
-
 }
