@@ -2,8 +2,6 @@ namespace CarAuctionManagementSystem.Models;
 
 public class Truck : Vehicle
 {
-    public int LoadCapacity { get; set; }
-
     public Truck(
         int id,
         VehicleType type,
@@ -14,7 +12,8 @@ public class Truck : Vehicle
         int loadCapacity)
         : base(id, type, manufacturer, model, year, startingBid)
     {
-        LoadCapacity = loadCapacity;
+        LoadCapacity = loadCapacity; // usa a propriedade herdada
     }
 }
+
 

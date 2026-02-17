@@ -6,8 +6,8 @@ namespace CarAuctionManagementSystem.Services;
 
 public class AuctionService:IAuctionService
 {
-    private readonly IAuctionRepository _auctionRepository;
-    private readonly IVehicleRepository _vehicleRepository;
+    private readonly IAuctionRepository? _auctionRepository;
+    private readonly IVehicleRepository? _vehicleRepository;
     
     
     public OperationResult<AuctionDto> StartAuction(int vehicleId)

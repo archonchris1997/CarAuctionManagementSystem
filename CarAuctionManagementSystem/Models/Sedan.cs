@@ -2,8 +2,6 @@ namespace CarAuctionManagementSystem.Models;
 
 public class Sedan : Vehicle
 {
-    public int NumberOfDoors { get; set; }
-
     public Sedan(
         int id,
         VehicleType type,
@@ -14,6 +12,6 @@ public class Sedan : Vehicle
         int numberOfDoors)
         : base(id, type, manufacturer, model, year, startingBid)
     {
-        NumberOfDoors = numberOfDoors;
+        NumberOfDoors = numberOfDoors; // usa a propriedade herdada
     }
 }
