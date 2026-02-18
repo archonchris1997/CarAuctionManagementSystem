@@ -11,8 +11,23 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Inventory\" />
       <Folder Include="Tests\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Inventory\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Inventory\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Inventory\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Inventory\**" />
     </ItemGroup>
 
 </Project>

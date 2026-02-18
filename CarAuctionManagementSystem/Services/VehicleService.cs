@@ -59,6 +59,8 @@ public class VehicleService : IVehicleService
             Success = true,
             Message = "Vehicle added",
             // Retornar para o Controller em DTO
+            
+            //1 Veículo *apenas*
             Data = VehicleMapper.ToDto(vehicle)
         };
         
@@ -150,7 +152,7 @@ public class VehicleService : IVehicleService
 
     private Vehicle CreateVehicle(CreateVehicleRequest request)
     {
-        // Aqui está a parte "não OCP": cada novo tipo -> tens de modificar este método
+
         switch (request.Type)
         {
             case VehicleType.Hatchback:

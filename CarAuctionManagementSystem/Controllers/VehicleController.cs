@@ -35,21 +35,36 @@ public class VehicleController : ControllerBase
     public IActionResult GetByManufacturer(string manufacturer)
     {
         var result = _vehicleService.GetByManufacturer(manufacturer);
-        return Ok(result);
+
+        if (result.Success)
+        {
+            return Ok(result);
+        }
+        return BadRequest(result);
     }
 
     [HttpGet("byModel/{model}")]
     public IActionResult GetByModel(string model)
     {
         var result = _vehicleService.GetByModel(model);
-        return Ok(result);
+        if (result.Success)
+        {
+            return Ok(result);
+        }
+        
+        return BadRequest(result);
+        
     }
 
     [HttpGet("byYear/{year}")]
     public IActionResult GetByYear(int year)
     {
         var result = _vehicleService.GetByYear(year);
-        return Ok(result);
+        if (result.Success)
+        {
+            return Ok(result);
+        }
+        return BadRequest(result);
     }
     
     
