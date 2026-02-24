@@ -9,11 +9,14 @@ public class VehicleRepository : IVehicleRepository
     
     public Vehicle? GetById(int id)
     {
+        
+        
         if (_vehicles.ContainsKey(id))
             return _vehicles[id];
-
+        
         return null;
     }
+    
 
     public IEnumerable<Vehicle> GetAll()
     {

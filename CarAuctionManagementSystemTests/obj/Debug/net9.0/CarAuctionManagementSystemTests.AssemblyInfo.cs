@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CarAuctionManagementSystemTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94c22f0482b205a923888d2cc71314b56b47ebe2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5a1e8527c014981bef9cf12359fa7c9bcd75974")]
 [assembly: System.Reflection.AssemblyProductAttribute("CarAuctionManagementSystemTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CarAuctionManagementSystemTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

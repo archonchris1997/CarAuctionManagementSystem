@@ -5,16 +5,18 @@ namespace CarAuctionManagementSystem.Repository;
 public class AuctionRepository:IAuctionRepository
 {
     
-    private readonly Dictionary<int,Auction> _auctions = new Dictionary<int, Auction>();
+    //Básicamente vai a Key vai ser o VeículoID e a Auction vai ser o Value
+    private readonly Dictionary< int, Auction> _auctions = new Dictionary<int, Auction>();
 
     public IEnumerable<Auction> GetAll()
     {
         return _auctions.Values;
     }
 
-    public Auction? GetByVehicleId(int vehicleId)
+    public Auction? GetAuctionByVehicleId(int vehicleId)
     {
         if (_auctions.ContainsKey(vehicleId))
+            
             return _auctions[vehicleId];
 
         return null;
@@ -22,12 +24,18 @@ public class AuctionRepository:IAuctionRepository
 
     public Auction? GetById(int auctionId)
     {
-
+        /*
         if (_auctions.TryGetValue(auctionId, out var auction))
         {
             return auction;
             
+        }*/
+
+        if (_auctions.ContainsKey(auctionId))
+        {
+            return _auctions[auctionId];
         }
+        
         return null;
     }
 
@@ -38,6 +46,12 @@ public class AuctionRepository:IAuctionRepository
 
     public void Update(Auction auction)
     {
-        _auctions[auction.Vehicle.Id] = auction;
+        
+        int key = auction.Vehicle.Id;
+        if (_auctions.ContainsKey(key))
+        {
+            _auctions[key] = auction;
+        }
+        
     }
 }

@@ -5,7 +5,7 @@ namespace CarAuctionManagementSystem.Repository;
 public interface IAuctionRepository
 {
     IEnumerable<Auction> GetAll();
-    Auction? GetByVehicleId(int id);
+    Auction? GetAuctionByVehicleId(int id);
     Auction? GetById(int auctionId);
     
     void Insert(Auction auction);
