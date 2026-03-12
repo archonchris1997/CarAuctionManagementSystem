@@ -5,7 +5,7 @@ namespace CarAuctionManagementSystem.Mappers;
 
 public class VehicleMapper
 {
-    public static VehicleDto ToDto(Vehicle vehicle)
+    public static VehicleDto ConvertToDto(Vehicle vehicle)
     {
         var dto = new VehicleDto();
         

@@ -61,7 +61,7 @@ public class VehicleService : IVehicleService
             // Retornar para o Controller em DTO
             
             //1 Veículo *apenas*
-            Data = VehicleMapper.ToDto(vehicle)
+            Data = VehicleMapper.ConvertToDto(vehicle)
         };
         
         
@@ -77,7 +77,7 @@ public class VehicleService : IVehicleService
         
         foreach (var vehicle in vehicles)
         {
-            var vehicleMapped = VehicleMapper.ToDto(vehicle);
+            var vehicleMapped = VehicleMapper.ConvertToDto(vehicle);
             dtos.Add(vehicleMapped);
         }
         
@@ -97,7 +97,7 @@ public class VehicleService : IVehicleService
         var dtos = new List<VehicleDto>();
         foreach (var vehicle in vehicles)
         {
-            var dto = VehicleMapper.ToDto(vehicle);
+            var dto = VehicleMapper.ConvertToDto(vehicle);
             dtos.Add(dto);
         }
 
@@ -119,7 +119,7 @@ public class VehicleService : IVehicleService
         
         foreach (var vehicle in vehicles)
         {
-            var dto = VehicleMapper.ToDto(vehicle);
+            var dto = VehicleMapper.ConvertToDto(vehicle);
             dtos.Add(dto);
         }
 
@@ -138,7 +138,7 @@ public class VehicleService : IVehicleService
         var dtos = new List<VehicleDto>();
         foreach (var vehicle in vehicles)
         {
-            var dto = VehicleMapper.ToDto(vehicle);
+            var dto = VehicleMapper.ConvertToDto(vehicle);
             dtos.Add(dto);
         }
 
@@ -150,6 +150,7 @@ public class VehicleService : IVehicleService
         };
     }
 
+    //Eu deveria estar a aplicar um design pattern - Factory - Separation of Concerns
     private Vehicle CreateVehicle(CreateVehicleRequest request)
     {
 
