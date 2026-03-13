@@ -33,6 +33,7 @@ public class AuctionService:IAuctionService
                     {
                         "Vehicle not found."
                     },
+                    ErrorType = ErrorType.NotFound,
                     Data = null
                 };
             }
@@ -52,6 +53,7 @@ public class AuctionService:IAuctionService
                     {
                         Success = false,
                         Message = "Vehicle already has an auction",
+                        ErrorType = ErrorType.Conflict,
                         Errors = new List<string>()
                         {
                             "Vehicle already has an auction."
@@ -100,6 +102,7 @@ public class AuctionService:IAuctionService
                 Success = false,
                 Message = "Vehicle does not exist",
                 Data = null,
+                ErrorType = ErrorType.NotFound,
                 Errors = new List<string>()
                 {
                     "Vehicle not found."
@@ -115,6 +118,7 @@ public class AuctionService:IAuctionService
                 Success = false,
                 Message = "Auction does not exist",
                 Data = null,
+                ErrorType = ErrorType.NotFound, 
                 Errors = new List<string>()
                 {
                     "Auction not found."
@@ -129,11 +133,12 @@ public class AuctionService:IAuctionService
             return new OperationResult<AuctionDto>()
             {
                 Success = false,
-                Message = "Bid is too big",
+                Message = "Bid must be greater than current price",
                 Data = null,
+                ErrorType = ErrorType.Validation,
                 Errors = new List<string>()
                 {
-                    "Bid is too big"
+                    "Bid must be greater than current price"
                 }
             };
             
@@ -171,6 +176,7 @@ public class AuctionService:IAuctionService
                 Success = false,
                 Message = "Vehicle does not exist",
                 Data = null,
+                ErrorType = ErrorType.NotFound,
                 Errors = new List<string>()
                 {
                     "Vehicle not found"
@@ -186,6 +192,7 @@ public class AuctionService:IAuctionService
             {
                 Success = false,
                 Message = "Auction does not exist",
+                ErrorType = ErrorType.NotFound,
                 Data = null,
                 Errors = new List<string>()
                 {
@@ -200,6 +207,7 @@ public class AuctionService:IAuctionService
             {
                 Success = false,
                 Message = "Auction is already closed",
+                ErrorType = ErrorType.Conflict,
                 Data = null,
                 Errors = new List<string>()
                 {

@@ -6,6 +6,9 @@ public class OperationResult
     public string Message { get; set; } = "";
     
     public List<string> Errors { get; set; } = new List<string>();
+    
+    public ErrorType ErrorType { get; set; } = ErrorType.None;
+
 }
 
 public class OperationResult<T> : OperationResult
